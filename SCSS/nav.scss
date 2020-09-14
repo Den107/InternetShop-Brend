@@ -1,0 +1,28 @@
+//----шрифты--------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+//----переменные-------------------------------------------------------------------------------------------------------------------
+$mainColor: #f16d7f;
+$secondColor: #222222;
+$container-width: 1140px;
+//---------------------------------------------------------------------------------------------------------------------------------
+
+.nav {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__list {
+        display: flex;
+    }
+    &__item {
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+}

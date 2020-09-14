@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+.header {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.container {
+  width: 1140px;
+  margin: 0 auto; }
+
+.header__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
