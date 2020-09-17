@@ -13,8 +13,12 @@
         font-weight: 700;
         text-transform: uppercase;
         color: $secondColor;
+        border-bottom: 2px solid transparent;
         &:not(:last-child) {
             margin-right: 50px;
+        }
+        &:hover {
+            border-bottom: 2px solid black;
         }
     }
 }

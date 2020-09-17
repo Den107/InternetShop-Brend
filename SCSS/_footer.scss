@@ -14,6 +14,7 @@
         width: 50%;
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     &__image {
@@ -44,6 +45,7 @@
         font-weight: 300;
         color: $secondColor;
     }
+
     &__right {
         width: 50%;
         justify-content: center;
@@ -68,8 +70,7 @@
         color: $secondColor;
         margin-bottom: 32px;
     }
-    &__form {
-    }
+
     &__input {
         width: 334px;
         height: 46px;
@@ -88,5 +89,119 @@
         height: 46px;
         background-color: #f16d7f;
         border-radius: 0px 23px 23px 0px;
+        color: #ffffff;
+
+        font-size: 14px;
+
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        &:hover {
+            background-color: darken($color: #ac4e5a, $amount: 0);
+        }
+    }
+    &__line1 {
+        position: absolute;
+        top: 307px;
+        left: 107px;
+    }
+
+    &__line2 {
+        position: absolute;
+        top: 307px;
+        left: 156px;
+    }
+    &__line3 {
+        position: absolute;
+        top: 307px;
+        left: 210;
+    }
+}
+.information {
+    margin-top: 100px;
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__brand {
+        & p {
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 300;
+            letter-spacing: 0.025em;
+            color: #898989;
+            margin-right: 66px;
+            margin-top: 25px;
+        }
+    }
+
+    &__item {
+        margin: 30px;
+        min-width: 157px;
+    }
+    &__label {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 700;
+        letter-spacing: 0.025em;
+        color: $mainColor;
+        margin-bottom: 20px;
+    }
+
+    &__list-item {
+        & a {
+            color: #898989;
+            font-size: 16px;
+            line-height: 42px;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            &:hover {
+                border-bottom: 2px solid #898989;
+            }
+        }
+    }
+}
+
+.footer {
+    margin-top: 100px;
+    background-color: #e6e6e6;
+    height: 80px;
+    &__flex {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__left {
+        font-size: 16px;
+        line-height: 42px;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        color: #7a7a7a;
+    }
+    &__right {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__icon {
+        width: 32px;
+        height: 32px;
+        background-color: #ffffff;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & i {
+            font-size: 16px;
+            line-height: 42px;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            color: #b2b2b2;
+        }
+        &:hover {
+            background-color: $mainColor;
+            & i {
+                color: white;
+            }
+        }
     }
 }

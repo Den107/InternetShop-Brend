@@ -122,6 +122,49 @@ $container-width: 1140px;
 }
 
 .fetured-item {
+    position: relative;
+    &:hover {
+        box-shadow: 5px 5px 5px 5px #aaa;
+        .fetured-item__hidden {
+            display: flex;
+        }
+    }
+    &__cart {
+        background-color: rgba(58, 56, 56, 0.83);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 123px;
+        height: 39px;
+        border: 1px solid #ffffff;
+        & img {
+            width: 23px;
+            height: 22px;
+        }
+        & p {
+            font-size: 13px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+            display: inline-block;
+            text-align: center;
+        }
+        &:hover {
+            p {
+                color: $mainColor;
+            }
+            border: 1px solid $mainColor;
+        }
+    }
+    &__hidden {
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 263px;
+        height: 281px;
+        background-color: rgba(58, 56, 56, 0.83);
+    }
     &__title {
         padding-left: 15px;
         font-size: 13px;
@@ -145,12 +188,17 @@ $container-width: 1140px;
         width: 212px;
         height: 48px;
         background-color: $mainColor;
-
+        & i {
+            padding-left: 5px;
+        }
         font-size: 16px;
         line-height: 54px;
         font-weight: 700;
         letter-spacing: 0.025em;
         color: #ffffff;
+        &:hover {
+            background-color: darken($color: #ac4e5a, $amount: 0);
+        }
     }
 }
 .offer {
@@ -206,6 +254,7 @@ $container-width: 1140px;
         flex-direction: column;
         justify-content: space-around;
         width: 373px;
+        padding: 50px 0px;
     }
     &__item1 {
         padding: 0px 40px 0px 110px;
