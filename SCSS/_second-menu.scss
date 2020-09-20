@@ -1,0 +1,52 @@
+//----обнуление-----------------------------------------------------------------------------------------------------------
+@import "_null.scss";
+//----переменные-------------------------------------------------------------------------------------------------------------
+$mainColor: #f16d7f;
+$secondColor: #222222;
+$container-width: 1140px;
+//----шрифты--------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+
+.second-menu {
+    width: 100%;
+    background-color: #f8f3f4;
+    min-height: 150px;
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 150px;
+    }
+    &__left {
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $mainColor;
+    }
+
+    &__items {
+        display: inline-block;
+        &:not(:last-child)::after {
+            content: "/";
+        }
+    }
+    &__link {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #636363;
+        &--active {
+            font-weight: 700;
+            color: $mainColor;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        &:hover {
+            color: $mainColor;
+            font-weight: 700;
+        }
+    }
+}

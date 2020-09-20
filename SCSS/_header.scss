@@ -55,6 +55,7 @@
         width: 130px;
         height: 38px;
         background-color: $mainColor;
+        border-radius: 3px;
         &:hover {
             background-color: darken($color: #ac4e5a, $amount: 0);
         }

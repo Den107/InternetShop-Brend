@@ -1,0 +1,297 @@
+//----обнуление-----------------------------------------------------------------------------------------------------------
+@import "_null.scss";
+//----переменные-------------------------------------------------------------------------------------------------------------
+$mainColor: #f16d7f;
+$secondColor: #222222;
+$container-width: 1140px;
+//----шрифты--------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+//----шапка---------------------------------------------------------------------------------------------------------------
+@import "_header.scss";
+//----навигация----------------------------------------------------------------------------------------------------------
+@import "_nav.scss";
+//----второе меню--------------------------------------------------------
+@import "_second-menu";
+//----подвал----------------------------------------------------------------------------------------------------------------
+@import "_footer.scss";
+//---------------------------------------------------------------------------------------------------------------------------
+
+.product-details {
+    margin-top: 100px;
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__left {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.015em;
+        color: $secondColor;
+    }
+    &__right {
+        display: flex;
+        justify-content: space-between;
+        min-width: 630px;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.015em;
+        color: $secondColor;
+    }
+    &__item {
+        margin-top: 20px;
+    }
+    &__buttons {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button {
+        width: 235px;
+        height: 50px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #4a4a4a;
+        &:hover {
+            background-color: $mainColor;
+            color: #eaeaea;
+        }
+    }
+}
+.line {
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: 1px solid #ececec;
+}
+.product-details-item {
+    display: flex;
+    justify-content: space-between;
+    &__left {
+        display: flex;
+    }
+    &__image {
+        width: 100px;
+        height: 115px;
+        background-color: rgba(101, 169, 200, 0.09);
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px 0px 20px;
+    }
+    &__name {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+        padding-bottom: 40px;
+    }
+    &__color {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #575757;
+        & span {
+            font-weight: 300;
+            color: #6f6e6e;
+        }
+    }
+    &__size {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #575757;
+        & span {
+            font-weight: 300;
+            color: #6f6e6e;
+        }
+    }
+    &__right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 630px;
+    }
+    &__price {
+        padding-left: 21px;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #656565;
+    }
+    &__quantity {
+        padding-left: 15px;
+        width: 54px;
+        height: 30px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        text-align: center;
+    }
+    &__shipping {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #656565;
+    }
+    &__subtotal {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #656565;
+        padding-right: 13px;
+    }
+    & i {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #c0c0c0;
+        padding-right: 15px;
+    }
+}
+.shipping-form {
+    min-height: 270px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    &__shipping-adress {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__label {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+    }
+    &__country {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: #b1b1b1;
+        padding-left: 14px;
+
+        width: 355px;
+        height: 45px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        & option {
+            color: black;
+        }
+    }
+    &__state {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 300;
+
+        padding-left: 14px;
+        width: 355px;
+        height: 45px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+    }
+    &__zip {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 300;
+
+        padding-left: 14px;
+        width: 355px;
+        height: 45px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+    }
+    &__button {
+        width: 100px;
+        height: 35px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+
+        font-size: 11px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #4a4a4a;
+        &:hover {
+            background-color: $mainColor;
+            color: white;
+        }
+    }
+    &__coupon-discount {
+        max-height: 186px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__sublabel {
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: #000000;
+    }
+    &__total {
+        width: 360px;
+        height: 214px;
+        background-color: #f5f3f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 40px;
+    }
+    &__main-total {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+        & span {
+            font-size: 16px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $mainColor;
+            padding-left: 20px;
+        }
+    }
+    &__sub-total {
+        font-size: 11px;
+        line-height: 1.2;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #4a4a4a;
+        & span {
+            padding-left: 20px;
+        }
+    }
+    &__total-button {
+        width: 273px;
+        height: 50px;
+        background-color: $mainColor;
+
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ffffff;
+        &:hover {
+            background-color: darken($color: #ac4e5a, $amount: 0);
+        }
+    }
+    &__line {
+        width: 275px;
+        height: 1px;
+        background-color: #e2e2e2;
+    }
+}
