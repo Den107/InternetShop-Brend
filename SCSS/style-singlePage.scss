@@ -1,0 +1,262 @@
+//----обнуление-----------------------------------------------------------------------------------------------------------
+@import "_null.scss";
+//----переменные-------------------------------------------------------------------------------------------------------------
+$mainColor: #f16d7f;
+$secondColor: #222222;
+$container-width: 1140px;
+//----шрифты--------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+//----шапка---------------------------------------------------------------------------------------------------------------
+@import "_header.scss";
+//----навигация----------------------------------------------------------------------------------------------------------
+@import "_nav.scss";
+//----второе меню--------------------------------------------------------
+@import "_second-menu";
+//----подвал----------------------------------------------------------------------------------------------------------------
+@import "_footer.scss";
+//---------------------------------------------------------------------------------------------------------------------------
+
+.slider {
+    position: relative;
+    z-index: 0;
+    height: 777px;
+    background-color: #f7f7f7;
+    border: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__arr {
+        width: 47px;
+        height: 47px;
+        background-color: #d8d8d8;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: darkgray;
+        }
+        & i {
+            font-size: 24px;
+            line-height: 24px;
+            //font-weight: 400;
+            color: #f7f7f7;
+        }
+    }
+}
+
+.women-collection {
+    position: relative;
+    z-index: 2;
+    margin-top: -80px;
+    min-height: 730px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 120px;
+    &__sublabel {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        color: $mainColor;
+    }
+
+    &__label {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #4d4d4d;
+    }
+
+    &__content {
+        max-width: 618px;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 300;
+        color: #5e5e5e;
+    }
+
+    &__list {
+        display: flex;
+
+        & :not(:last-child) {
+            margin-right: 45px;
+        }
+    }
+
+    &__item {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #b9b9b9;
+        & span {
+            color: #2f2f2f;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 700;
+        }
+    }
+    &__price {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 700;
+        color: $mainColor;
+    }
+    &__name-of-form {
+        display: flex;
+        min-width: 470px;
+        justify-content: space-between;
+    }
+    &__form {
+        min-width: 538px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 33px;
+        &:nth-child(2) {
+            margin-left: 30px;
+        }
+        &:last-child {
+            margin-left: 30px;
+        }
+    }
+
+    &__choose-label {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #2f2f2f;
+    }
+
+    &__select {
+        width: 144px;
+        height: 35px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        padding-left: 10px;
+        font-size: 13px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #bcbcbc;
+        & option {
+            color: black;
+        }
+    }
+
+    &__button {
+        width: 537px;
+        height: 55px;
+        background-color: #ffffff;
+        border: 1px solid $mainColor;
+
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $mainColor;
+        & img {
+            padding-right: 10px;
+        }
+        &:hover {
+            background-color: $mainColor;
+            color: white;
+            img {
+                color: white;
+            }
+        }
+    }
+}
+.line {
+    width: 642px;
+    height: 1px;
+    background-color: #ef5b70;
+    border: 1px solid #eaeaea;
+}
+
+.you-make-also {
+    margin-top: 100px;
+
+    &__label {
+        margin-bottom: 70px;
+        display: flex;
+        justify-content: center;
+
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #4d4d4d;
+    }
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__fetured-item {
+        width: 261px;
+        & img {
+            height: 280px;
+        }
+    }
+}
+
+.fetured-item {
+    position: relative;
+    &:hover {
+        box-shadow: 5px 5px 5px 5px #aaa;
+        .fetured-item__hidden {
+            display: flex;
+        }
+    }
+    &__cart {
+        background-color: rgba(58, 56, 56, 0.83);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 123px;
+        height: 39px;
+        border: 1px solid #ffffff;
+        & img {
+            width: 23px;
+            height: 22px;
+        }
+        & p {
+            font-size: 13px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+            display: inline-block;
+            text-align: center;
+        }
+        &:hover {
+            p {
+                color: $mainColor;
+            }
+            border: 1px solid $mainColor;
+        }
+    }
+    &__hidden {
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 263px;
+        height: 281px;
+        background-color: rgba(58, 56, 56, 0.83);
+    }
+    &__title {
+        padding-left: 15px;
+        font-size: 13px;
+        line-height: 3;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+    }
+    &__subtitle {
+        padding-left: 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $mainColor;
+    }
+}
