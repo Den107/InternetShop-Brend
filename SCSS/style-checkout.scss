@@ -1,0 +1,178 @@
+//----обнуление-----------------------------------------------------------------------------------------------------------
+@import "_null.scss";
+//----переменные-------------------------------------------------------------------------------------------------------------
+$mainColor: #f16d7f;
+$secondColor: #222222;
+$container-width: 1140px;
+//----шрифты--------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+//----шапка---------------------------------------------------------------------------------------------------------------
+@import "_header.scss";
+//----навигация----------------------------------------------------------------------------------------------------------
+@import "_nav.scss";
+//----второе меню--------------------------------------------------------
+@import "_second-menu.scss";
+//----подвал----------------------------------------------------------------------------------------------------------------
+@import "_footer.scss";
+//---------------------------------------------------------------------------------------------------------------------------
+
+.main-slider {
+    margin-top: 100px;
+    &__input-label {
+        display: none;
+        &:checked ~ div {
+            display: flex;
+            transition-duration: 0.5s;
+        }
+    }
+    &__label {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+    }
+
+    &__flex {
+        display: none;
+        justify-content: space-between;
+        max-width: 940px;
+        margin-left: 40px;
+        min-height: 345px;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 500px;
+    }
+
+    &__sublabel {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+        margin-top: 35px;
+    }
+
+    &__content {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #b3b2b2;
+        margin-top: 10px;
+    }
+    &__form-radio {
+        margin-top: 20px;
+        & p {
+            margin-top: 10px;
+        }
+    }
+    &__radio {
+        width: 14px;
+        height: 14px;
+
+        border: 2px solid #555555;
+
+        color: black;
+        margin-right: 10px;
+    }
+    &__radio-text {
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+    }
+    &__espesially {
+        margin-top: 10px;
+        & ~ p {
+            & i {
+                font-size: 13px;
+                line-height: 20px;
+                font-weight: 600;
+                color: #b3b2b2;
+            }
+        }
+    }
+    &__content-span {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #b3b2b2;
+    }
+
+    &__button {
+        margin-top: 40px;
+        width: 180px;
+        height: 50px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #4a4a4a;
+        &:hover {
+            background-color: $mainColor;
+            color: white;
+            transition-duration: 0.3s;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 500px;
+    }
+
+    &__label-form {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 700;
+        color: $secondColor;
+        & span {
+            font-size: 17px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #ff0d0d;
+        }
+    }
+    &__input {
+        width: 390px;
+        height: 45px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 300;
+    }
+
+    &__required {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 700;
+        color: #ff0d0d;
+    }
+
+    &__forgot-pass {
+        margin-left: 30px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        color: $secondColor;
+    }
+}
+.line {
+    width: 1140px;
+    height: 1px;
+    background-color: #e8e8e8;
+    margin: 20px;
+}
