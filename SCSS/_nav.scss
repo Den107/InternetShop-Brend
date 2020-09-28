@@ -18,7 +18,17 @@
             margin-right: 50px;
         }
         &:hover {
+            transition-duration: 0.3s;
             border-bottom: 2px solid black;
+        }
+        &--active {
+            font-size: 14px;
+            line-height: 26px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $secondColor;
+            border-bottom: 2px solid $mainColor;
+            margin-right: 50px;
         }
     }
 }

@@ -57,6 +57,7 @@
         background-color: $mainColor;
         border-radius: 3px;
         &:hover {
+            transition-duration: 0.3s;
             background-color: darken($color: #ac4e5a, $amount: 0);
         }
         font-size: 15px;

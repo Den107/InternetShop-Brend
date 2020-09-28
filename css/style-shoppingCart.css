@@ -150,6 +150,9 @@ h6 {
     letter-spacing: 0.025em;
     color: #ffffff; }
     .header__button-myAccount:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       background-color: #ac4e5a; }
     .header__button-myAccount i {
       padding-left: 5px; }
@@ -203,7 +206,18 @@ h6 {
     .nav__item:not(:last-child) {
       margin-right: 50px; }
     .nav__item:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       border-bottom: 2px solid black; }
+    .nav__item--active {
+      font-size: 14px;
+      line-height: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #222222;
+      border-bottom: 2px solid #f16d7f;
+      margin-right: 50px; }
 
 * {
   padding: 0;
@@ -345,6 +359,7 @@ h6 {
     -ms-flex-align: center;
     align-items: center; }
   .subscribe__left {
+    border-right: 2px solid white;
     min-height: 438px;
     width: 50%;
     display: -webkit-box;
@@ -424,6 +439,9 @@ h6 {
     font-weight: 400;
     letter-spacing: 0.025em; }
     .subscribe__button:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       background-color: #ac4e5a; }
   .subscribe__line1 {
     position: absolute;
@@ -472,6 +490,9 @@ h6 {
     font-weight: 400;
     letter-spacing: 0.025em; }
     .information__list-item a:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       border-bottom: 2px solid #898989; }
 
 .footer {
@@ -523,6 +544,9 @@ h6 {
       letter-spacing: 0.025em;
       color: #b2b2b2; }
     .footer__icon:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       background-color: #f16d7f; }
       .footer__icon:hover i {
         color: white; }
@@ -578,6 +602,9 @@ h6 {
     text-transform: uppercase;
     color: #4a4a4a; }
     .product-details__button:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       background-color: #f16d7f;
       color: #eaeaea; }
 
@@ -743,6 +770,9 @@ h6 {
     text-transform: uppercase;
     color: #4a4a4a; }
     .shipping-form__button:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       background-color: #f16d7f;
       color: white; }
   .shipping-form__coupon-discount {
@@ -811,6 +841,9 @@ h6 {
     text-transform: uppercase;
     color: #ffffff; }
     .shipping-form__total-button:hover {
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
       background-color: #ac4e5a; }
   .shipping-form__line {
     width: 275px;

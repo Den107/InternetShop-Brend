@@ -10,6 +10,7 @@
         align-items: center;
     }
     &__left {
+        border-right: 2px solid white;
         min-height: 438px;
         width: 50%;
         display: flex;
@@ -96,6 +97,7 @@
         font-weight: 400;
         letter-spacing: 0.025em;
         &:hover {
+            transition-duration: 0.3s;
             background-color: darken($color: #ac4e5a, $amount: 0);
         }
     }
@@ -155,6 +157,7 @@
             font-weight: 400;
             letter-spacing: 0.025em;
             &:hover {
+                transition-duration: 0.3s;
                 border-bottom: 2px solid #898989;
             }
         }
@@ -198,6 +201,7 @@
             color: #b2b2b2;
         }
         &:hover {
+            transition-duration: 0.3s;
             background-color: $mainColor;
             & i {
                 color: white;

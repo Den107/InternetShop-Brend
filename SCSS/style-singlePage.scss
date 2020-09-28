@@ -33,6 +33,7 @@ $container-width: 1140px;
         justify-content: center;
         align-items: center;
         &:hover {
+            transition-duration: 0.3s;
             background-color: darkgray;
         }
         & i {
@@ -163,6 +164,7 @@ $container-width: 1140px;
             padding-right: 10px;
         }
         &:hover {
+            transition-duration: 0.3s;
             background-color: $mainColor;
             color: white;
             img {
@@ -208,6 +210,7 @@ $container-width: 1140px;
 .fetured-item {
     position: relative;
     &:hover {
+        transition-duration: 0.3s;
         box-shadow: 5px 5px 5px 5px #aaa;
         .fetured-item__hidden {
             display: flex;

@@ -61,6 +61,7 @@ $container-width: 1140px;
         text-transform: uppercase;
         color: #4a4a4a;
         &:hover {
+            transition-duration: 0.3s;
             background-color: $mainColor;
             color: #eaeaea;
         }
@@ -224,6 +225,7 @@ $container-width: 1140px;
         text-transform: uppercase;
         color: #4a4a4a;
         &:hover {
+            transition-duration: 0.3s;
             background-color: $mainColor;
             color: white;
         }
@@ -286,6 +288,7 @@ $container-width: 1140px;
         text-transform: uppercase;
         color: #ffffff;
         &:hover {
+            transition-duration: 0.3s;
             background-color: darken($color: #ac4e5a, $amount: 0);
         }
     }

@@ -124,6 +124,7 @@ $container-width: 1140px;
 .fetured-item {
     position: relative;
     &:hover {
+        transition-duration: 0.3s;
         box-shadow: 5px 5px 5px 5px #aaa;
         .fetured-item__hidden {
             display: flex;
@@ -197,6 +198,7 @@ $container-width: 1140px;
         letter-spacing: 0.025em;
         color: #ffffff;
         &:hover {
+            transition-duration: 0.3s;
             background-color: darken($color: #ac4e5a, $amount: 0);
         }
     }
