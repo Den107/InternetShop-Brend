@@ -1,0 +1,344 @@
+//----обнуление-----------------------------------------------------------------------------------------------------------
+@import "_null.scss";
+//----переменные-------------------------------------------------------------------------------------------------------------
+$mainColor: #f16d7f;
+$secondColor: #222222;
+$container-width: 1140px;
+//----шрифты--------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+//----шапка---------------------------------------------------------------------------------------------------------------
+@import "_header.scss";
+//----навигация----------------------------------------------------------------------------------------------------------
+@import "_nav.scss";
+//----второе меню--------------------------------------------------------
+@import "_second-menu.scss";
+//----подвал----------------------------------------------------------------------------------------------------------------
+@import "_footer.scss";
+//---------------------------------------------------------------------------------------------------------------------------
+
+.content {
+    margin-top: 100px;
+    display: flex;
+    &__left {
+        min-width: 246px;
+    }
+
+    &__rigth {
+        margin-left: 45px;
+        min-width: 846px;
+    }
+
+    &__filter-form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__trending-now {
+        max-width: 205px;
+        margin-bottom: 40px;
+    }
+
+    &__label {
+        margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #6f6e6e;
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #6f6e6e;
+        &:not(:last-child)::after {
+            content: "|";
+            color: #dfdfdf;
+            margin: 0 10px;
+        }
+    }
+
+    &__size {
+        line-height: 26px;
+        max-width: 235px;
+    }
+
+    &__size-item {
+        width: 13px;
+        height: 13px;
+        background-color: #ffffff;
+        border: 1px solid #ebebeb;
+    }
+
+    &__size-label {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #6f6e6e;
+        margin-right: 25px;
+    }
+
+    &__price {
+    }
+
+    &__range {
+        min-width: 262px;
+    }
+
+    &__range-price {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__minAndMax-price {
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #6f6e6e;
+    }
+
+    &__filter {
+        display: flex;
+        align-items: center;
+        width: 846px;
+        height: 50px;
+        background-color: #f3f3f3;
+    }
+
+    &__sort {
+        text-align: center;
+        min-width: 119px;
+        min-height: 30px;
+        background-color: #ffffff;
+        border: 1px solid #ebebeb;
+        margin-left: 12px;
+    }
+
+    &__filter-left {
+        padding: 10px;
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #6f6e6e;
+    }
+
+    &__filter-right {
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #6f6e6e;
+        border-left: 1px solid #ebebeb;
+    }
+    &__main {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    &__fetured-item {
+        margin-right: 20px;
+        margin-bottom: 50px;
+    }
+
+    &__pagination {
+        width: 261px;
+        height: 44px;
+        background-color: #ffffff;
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        & :nth-child(2) {
+            color: $mainColor;
+        }
+        & :nth-child(8) {
+            margin-left: -20px;
+        }
+        & i {
+            font-size: 20.2px;
+            line-height: 26px;
+            font-weight: 600;
+            color: #aaaaaa;
+        }
+    }
+
+    &__pagination-link {
+        font-family: Lato;
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #c4c4c4;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button {
+        width: 150px;
+        height: 44px;
+        background-color: #ffffff;
+        border: 1px solid $mainColor;
+        border-radius: 3px;
+
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 400;
+        color: $mainColor;
+        &:hover {
+            background-color: $mainColor;
+            color: #ffffff;
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+.aside-menu {
+    &__category {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #6f6e6e;
+        border-left: 5px solid $mainColor;
+        border-bottom: 1px solid #ebebeb;
+        background-color: #ffffff;
+        height: 40px;
+        width: 243px;
+        margin-bottom: 10px;
+        & input {
+            display: none;
+        }
+        &:hover {
+            color: $mainColor;
+        }
+        &:focus ~ ul {
+            display: block;
+            transition-duration: 0.5s;
+        }
+    }
+
+    &__list {
+        display: none;
+    }
+
+    &__items {
+        font-size: 14px;
+        line-height: 33px;
+        font-weight: 400;
+        color: #6f6e6e;
+        padding-left: 20px;
+    }
+
+    &__link {
+    }
+}
+.fetured-item {
+    position: relative;
+    &:hover {
+        transition-duration: 0.3s;
+        box-shadow: 5px 5px 5px 5px #aaa;
+        .fetured-item__hidden {
+            display: flex;
+        }
+    }
+    &__cart {
+        background-color: rgba(58, 56, 56, 0.83);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 123px;
+        height: 39px;
+        border: 1px solid #ffffff;
+        & img {
+            width: 23px;
+            height: 22px;
+        }
+        & p {
+            font-size: 13px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+            display: inline-block;
+            text-align: center;
+        }
+        &:hover {
+            p {
+                color: $mainColor;
+            }
+            border: 1px solid $mainColor;
+        }
+    }
+    &__hidden {
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 263px;
+        height: 281px;
+        background-color: rgba(58, 56, 56, 0.83);
+    }
+    &__title {
+        padding-left: 15px;
+        font-size: 13px;
+        line-height: 3;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+    }
+    &__subtitle {
+        padding-left: 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $mainColor;
+    }
+}
+
+.quality {
+    margin-bottom: -100px;
+    min-height: 341px;
+    background-color: $secondColor;
+    margin-top: 100px;
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 341px;
+    }
+    &__item {
+        text-align: center;
+    }
+
+    &__image {
+        width: 45px;
+        height: 32px;
+    }
+
+    &__label {
+        margin-top: 30px;
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: 0.025em;
+        color: #fbfbfb;
+    }
+
+    &__text {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 300;
+        letter-spacing: 0.025em;
+        color: #fbfbfb;
+    }
+}
