@@ -1,9 +1,7 @@
 //----обнуление-----------------------------------------------------------------------------------------------------------
 @import "_null.scss";
 //----переменные-------------------------------------------------------------------------------------------------------------
-$mainColor: #f16d7f;
-$secondColor: #222222;
-$container-width: 1140px;
+@import "_variables.scss";
 //----шрифты--------------------------------------------------------------------------------------------------------------
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 //----шапка---------------------------------------------------------------------------------------------------------------
@@ -16,7 +14,7 @@ $container-width: 1140px;
 .slider {
     width: 100%;
     min-height: 616px;
-    background-color: #e8e8e8;
+    background-color: $sliderBackground;
     &__flex {
         height: 616px;
         display: flex;
@@ -70,7 +68,7 @@ $container-width: 1140px;
         text-align: left;
         font-weight: 900;
         height: 82px;
-        background-color: #ffffff;
+        background-color: $whiteColor;
         left: 0px;
         z-index: 2;
         display: inline-block;
@@ -111,7 +109,7 @@ $container-width: 1140px;
         line-height: 30px;
         font-weight: 400;
         letter-spacing: 0.025em;
-        color: #9f9f9f;
+        color: $colorSubtitle;
         margin-bottom: 60px;
     }
     &__fetured-item {
@@ -125,19 +123,19 @@ $container-width: 1140px;
     position: relative;
     &:hover {
         transition-duration: 0.3s;
-        box-shadow: 5px 5px 5px 5px #aaa;
+        box-shadow: 5px 5px 5px 5px $colorShadow;
         .fetured-item__hidden {
             display: flex;
         }
     }
     &__cart {
-        background-color: rgba(58, 56, 56, 0.83);
+        background-color: $colorHiddenDiv;
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 123px;
         height: 39px;
-        border: 1px solid #ffffff;
+        border: 1px solid $whiteColor;
         & img {
             width: 23px;
             height: 22px;
@@ -146,7 +144,7 @@ $container-width: 1140px;
             font-size: 13px;
             line-height: 1.2;
             font-weight: 700;
-            color: #ffffff;
+            color: $whiteColor;
             display: inline-block;
             text-align: center;
         }
@@ -164,7 +162,7 @@ $container-width: 1140px;
         align-items: center;
         width: 263px;
         height: 281px;
-        background-color: rgba(58, 56, 56, 0.83);
+        background-color: $colorHiddenDiv;
     }
     &__title {
         padding-left: 15px;
@@ -196,10 +194,10 @@ $container-width: 1140px;
         line-height: 54px;
         font-weight: 700;
         letter-spacing: 0.025em;
-        color: #ffffff;
+        color: $whiteColor;
         &:hover {
             transition-duration: 0.3s;
-            background-color: darken($color: #ac4e5a, $amount: 0);
+            background-color: $colorHoverButton;
         }
     }
 }
@@ -216,7 +214,7 @@ $container-width: 1140px;
             line-height: 1.2;
             font-weight: 700;
             letter-spacing: 0.025em;
-            color: #ffffff;
+            color: $whiteColor;
             padding-top: 145px;
             padding-left: 37px;
             & span {
@@ -228,7 +226,7 @@ $container-width: 1140px;
             line-height: 1.2;
             font-weight: 700;
             letter-spacing: 0.025em;
-            color: #ffffff;
+            color: $whiteColor;
             font-size: 32.2px;
         }
         background: url("../image/index/offer-bg.png"), url("../image/index/offer_bg_2.png");
@@ -241,7 +239,7 @@ $container-width: 1140px;
             line-height: 1.2;
             font-weight: 700;
             letter-spacing: 0.025em;
-            color: #fbfbfb;
+            color: $whiteColor;
             padding-bottom: 25px;
         }
         & p {
@@ -249,7 +247,7 @@ $container-width: 1140px;
             line-height: 24px;
             font-weight: 300;
             letter-spacing: 0.025em;
-            color: #fbfbfb;
+            color: $whiteColor;
         }
         background-color: $secondColor;
         display: flex;

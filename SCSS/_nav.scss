@@ -19,7 +19,7 @@
         }
         &:hover {
             transition-duration: 0.3s;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid $secondColor;
         }
         &--active {
             font-size: 14px;

@@ -1,9 +1,7 @@
 //----обнуление-----------------------------------------------------------------------------------------------------------
 @import "_null.scss";
 //----переменные-------------------------------------------------------------------------------------------------------------
-$mainColor: #f16d7f;
-$secondColor: #222222;
-$container-width: 1140px;
+@import "_variables.scss";
 //----шрифты--------------------------------------------------------------------------------------------------------------
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 //----шапка---------------------------------------------------------------------------------------------------------------
@@ -52,25 +50,25 @@ $container-width: 1140px;
     &__button {
         width: 235px;
         height: 50px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $sliderBackground;
 
         font-size: 14px;
         line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
-        color: #4a4a4a;
+        color: $buttonCheckout;
         &:hover {
             transition-duration: 0.3s;
             background-color: $mainColor;
-            color: #eaeaea;
+            color: $sliderBackground;
         }
     }
 }
 .line {
     width: 100%;
     margin-top: 20px;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid $sliderBackground;
 }
 .product-details-item {
     display: flex;
@@ -100,20 +98,20 @@ $container-width: 1140px;
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #575757;
+        color: $radioBorder;
         & span {
             font-weight: 300;
-            color: #6f6e6e;
+            color: $colorGrey;
         }
     }
     &__size {
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #575757;
+        color: $radioBorder;
         & span {
             font-weight: 300;
-            color: #6f6e6e;
+            color: $colorGrey;
         }
     }
     &__right {
@@ -127,27 +125,27 @@ $container-width: 1140px;
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #656565;
+        color: $colorGrey;
     }
     &__quantity {
         padding-left: 15px;
         width: 54px;
         height: 30px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $sliderBackground;
         text-align: center;
     }
     &__shipping {
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #656565;
+        color: $colorGrey;
     }
     &__subtotal {
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #656565;
+        color: $colorGrey;
         padding-right: 13px;
     }
     & i {
@@ -155,7 +153,7 @@ $container-width: 1140px;
         line-height: 1.2;
         font-weight: 400;
         text-transform: uppercase;
-        color: #c0c0c0;
+        color: $colorOfI;
         padding-right: 15px;
     }
 }
@@ -180,15 +178,15 @@ $container-width: 1140px;
         font-size: 13px;
         line-height: 1.2;
         font-weight: 300;
-        color: #b1b1b1;
+        color: $colorOfI;
         padding-left: 14px;
 
         width: 355px;
         height: 45px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $sliderBackground;
         & option {
-            color: black;
+            color: $secondColor;
         }
     }
     &__state {
@@ -199,8 +197,8 @@ $container-width: 1140px;
         padding-left: 14px;
         width: 355px;
         height: 45px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $sliderBackground;
     }
     &__zip {
         font-size: 13px;
@@ -210,24 +208,24 @@ $container-width: 1140px;
         padding-left: 14px;
         width: 355px;
         height: 45px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $sliderBackground;
     }
     &__button {
         width: 100px;
         height: 35px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $sliderBackground;
 
         font-size: 11px;
         line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
-        color: #4a4a4a;
+        color: $buttonCheckout;
         &:hover {
             transition-duration: 0.3s;
             background-color: $mainColor;
-            color: white;
+            color: $whiteColor;
         }
     }
     &__coupon-discount {
@@ -240,12 +238,12 @@ $container-width: 1140px;
         font-size: 14px;
         line-height: 1.2;
         font-weight: 300;
-        color: #000000;
+        color: $secondColor;
     }
     &__total {
         width: 360px;
         height: 214px;
-        background-color: #f5f3f3;
+        background-color: $bgcSecondMenu;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -272,7 +270,7 @@ $container-width: 1140px;
         line-height: 1.2;
         font-weight: 400;
         text-transform: uppercase;
-        color: #4a4a4a;
+        color: $buttonCheckout;
         & span {
             padding-left: 20px;
         }
@@ -286,15 +284,15 @@ $container-width: 1140px;
         line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
-        color: #ffffff;
+        color: $whiteColor;
         &:hover {
             transition-duration: 0.3s;
-            background-color: darken($color: #ac4e5a, $amount: 0);
+            background-color: $colorHoverButton;
         }
     }
     &__line {
         width: 275px;
         height: 1px;
-        background-color: #e2e2e2;
+        background-color: $sliderBackground;
     }
 }

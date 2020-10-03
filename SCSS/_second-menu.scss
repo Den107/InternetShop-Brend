@@ -1,15 +1,13 @@
 //----обнуление-----------------------------------------------------------------------------------------------------------
 @import "_null.scss";
 //----переменные-------------------------------------------------------------------------------------------------------------
-$mainColor: #f16d7f;
-$secondColor: #222222;
-$container-width: 1140px;
+@import "_variables.scss";
 //----шрифты--------------------------------------------------------------------------------------------------------------
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 
 .second-menu {
     width: 100%;
-    background-color: #f8f3f4;
+    background-color: $bgcSecondMenu;
     min-height: 150px;
     &__flex {
         display: flex;
@@ -36,7 +34,7 @@ $container-width: 1140px;
         line-height: 20px;
         font-weight: 400;
         text-transform: uppercase;
-        color: #636363;
+        color: $colorLinksSecondMenu;
         &--active {
             font-weight: 700;
             color: $mainColor;

@@ -1,9 +1,7 @@
 //----обнуление-----------------------------------------------------------------------------------------------------------
 @import "_null.scss";
 //----переменные-------------------------------------------------------------------------------------------------------------
-$mainColor: #f16d7f;
-$secondColor: #222222;
-$container-width: 1140px;
+@import "_variables.scss";
 //----шрифты--------------------------------------------------------------------------------------------------------------
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
 //----шапка---------------------------------------------------------------------------------------------------------------
@@ -61,7 +59,7 @@ $container-width: 1140px;
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #b3b2b2;
+        color: $colorOfI;
         margin-top: 10px;
     }
     &__form-radio {
@@ -74,9 +72,9 @@ $container-width: 1140px;
         width: 14px;
         height: 14px;
 
-        border: 2px solid #555555;
+        border: 2px solid $radioBorder;
 
-        color: black;
+        color: $secondColor;
         margin-right: 10px;
     }
     &__radio-text {
@@ -93,7 +91,7 @@ $container-width: 1140px;
                 font-size: 13px;
                 line-height: 20px;
                 font-weight: 600;
-                color: #b3b2b2;
+                color: $colorOfI;
             }
         }
     }
@@ -101,24 +99,24 @@ $container-width: 1140px;
         font-size: 13px;
         line-height: 20px;
         font-weight: 400;
-        color: #b3b2b2;
+        color: $colorOfI;
     }
 
     &__button {
         margin-top: 40px;
         width: 180px;
         height: 50px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $bgcInputFooter;
 
         font-size: 14px;
         line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
-        color: #4a4a4a;
+        color: $buttonCheckout;
         &:hover {
             background-color: $mainColor;
-            color: white;
+            color: $whiteColor;
             transition-duration: 0.3s;
         }
     }
@@ -140,14 +138,14 @@ $container-width: 1140px;
             font-size: 17px;
             line-height: 20px;
             font-weight: 400;
-            color: #ff0d0d;
+            color: $redColor;
         }
     }
     &__input {
         width: 390px;
         height: 45px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
+        background-color: $whiteColor;
+        border: 1px solid $bgcInputFooter;
 
         font-size: 13px;
         line-height: 1.2;
@@ -159,7 +157,7 @@ $container-width: 1140px;
         font-size: 13px;
         line-height: 20px;
         font-weight: 700;
-        color: #ff0d0d;
+        color: $redColor;
     }
 
     &__forgot-pass {
@@ -173,6 +171,6 @@ $container-width: 1140px;
 .line {
     width: 1140px;
     height: 1px;
-    background-color: #e8e8e8;
+    background-color: $sliderBackground;
     margin: 20px;
 }

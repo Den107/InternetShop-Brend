@@ -105,7 +105,7 @@ h6 {
     margin-bottom: 21px; }
   .header__form-search {
     height: 40px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #e8e8e8;
     border-radius: 0px 3px 3px 0px; }
   .header__browse-button {
     width: 87px;
@@ -138,7 +138,7 @@ h6 {
     line-height: 32px;
     font-weight: 400;
     letter-spacing: 0.025em;
-    color: #a4a4a4; }
+    color: #aaa; }
   .header__button-myAccount {
     width: 130px;
     height: 38px;
@@ -163,7 +163,7 @@ h6 {
     margin-top: 6px; }
   .header__line {
     width: 100%;
-    border-bottom: 1px solid #ececec; }
+    border-bottom: 1px solid #e8e8e8; }
 
 .logo {
   font-size: 27px;
@@ -209,7 +209,7 @@ h6 {
       -webkit-transition-duration: 0.3s;
       -o-transition-duration: 0.3s;
       transition-duration: 0.3s;
-      border-bottom: 2px solid black; }
+      border-bottom: 2px solid #222222; }
     .nav__item--active {
       font-size: 14px;
       line-height: 26px;
@@ -359,7 +359,7 @@ h6 {
     -ms-flex-align: center;
     align-items: center; }
   .subscribe__left {
-    border-right: 2px solid white;
+    border-right: 2px solid #ffffff;
     min-height: 438px;
     width: 50%;
     display: -webkit-box;
@@ -497,7 +497,7 @@ h6 {
 
 .footer {
   margin-top: 100px;
-  background-color: #e6e6e6;
+  background-color: #e8e8e8;
   height: 80px; }
   .footer__flex {
     height: 80px;
@@ -549,7 +549,7 @@ h6 {
       transition-duration: 0.3s;
       background-color: #f16d7f; }
       .footer__icon:hover i {
-        color: white; }
+        color: #ffffff; }
 
 .main-slider {
   margin-top: 100px; }
@@ -596,7 +596,7 @@ h6 {
     font-size: 13px;
     line-height: 20px;
     font-weight: 400;
-    color: #b3b2b2;
+    color: #b2b2b2;
     margin-top: 10px; }
   .main-slider__form-radio {
     margin-top: 20px; }
@@ -606,7 +606,7 @@ h6 {
     width: 14px;
     height: 14px;
     border: 2px solid #555555;
-    color: black;
+    color: #222222;
     margin-right: 10px; }
   .main-slider__radio-text {
     font-size: 12px;
@@ -620,18 +620,18 @@ h6 {
       font-size: 13px;
       line-height: 20px;
       font-weight: 600;
-      color: #b3b2b2; }
+      color: #b2b2b2; }
   .main-slider__content-span {
     font-size: 13px;
     line-height: 20px;
     font-weight: 400;
-    color: #b3b2b2; }
+    color: #b2b2b2; }
   .main-slider__button {
     margin-top: 40px;
     width: 180px;
     height: 50px;
     background-color: #ffffff;
-    border: 1px solid #eaeaea;
+    border: 1px solid #e1e1e1;
     font-size: 14px;
     line-height: 1.2;
     font-weight: 700;
@@ -639,7 +639,7 @@ h6 {
     color: #4a4a4a; }
     .main-slider__button:hover {
       background-color: #f16d7f;
-      color: white;
+      color: #ffffff;
       -webkit-transition-duration: 0.3s;
       -o-transition-duration: 0.3s;
       transition-duration: 0.3s; }
@@ -667,7 +667,7 @@ h6 {
     width: 390px;
     height: 45px;
     background-color: #ffffff;
-    border: 1px solid #eaeaea;
+    border: 1px solid #e1e1e1;
     font-size: 13px;
     line-height: 1.2;
     font-weight: 300; }
