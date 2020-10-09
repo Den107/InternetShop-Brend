@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -6,6 +7,7 @@
     &__left {
         display: flex;
         align-items: center;
+        position: relative;
     }
     &__logo {
         margin-right: 40px;
@@ -15,6 +17,13 @@
         height: 40px;
         border: 1px solid $sliderBackground;
         border-radius: 0px 3px 3px 0px;
+    }
+    &__browse-input {
+        display: none;
+        &:checked ~ .header__down-menu,
+        &:active ~ .header__down-menu {
+            display: block;
+        }
     }
     &__browse-button {
         width: 87px;
@@ -31,6 +40,36 @@
             padding-left: 5px;
         }
     }
+
+    &__down-menu {
+        width: 262px;
+        height: 530px;
+        background-color: $whiteColor;
+        border-radius: 5px;
+        position: absolute;
+        top: 59px;
+        left: 207px;
+        padding: 15px;
+        display: none;
+        z-index: 1;
+        &:hover {
+            display: block;
+            z-index: 1;
+        }
+    }
+
+    &__label-down-menu {
+        @extend %downMenuLabel;
+    }
+
+    &__list-down-menu {
+        margin-top: 10px;
+    }
+
+    &__item-down-menu {
+        @extend %downMenuItem;
+    }
+
     &__imput {
         width: 317px;
         height: 38px;
@@ -69,6 +108,13 @@
             padding-left: 5px;
         }
     }
+    &__bascket-inp {
+        display: none;
+        &:checked ~ .header__bascket-menu,
+        &:active ~ .header__bascket-menu {
+            visibility: visible;
+        }
+    }
     &__bascket {
         width: 32px;
         height: 29px;
@@ -76,9 +122,128 @@
         margin-top: 6px;
     }
     &__line {
-        width: 100%;
+        @extend %line;
+    }
+    &__bascket-menu {
+        visibility: hidden;
+        position: absolute;
+        min-width: 262px;
+        min-height: 440px;
+        background-color: $whiteColor;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-around;
 
-        border-bottom: 1px solid $sliderBackground;
+        flex-direction: column;
+        top: 88px;
+    }
+
+    &__cart {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__context {
+        display: flex;
+        flex-direction: column;
+    }
+    &__cart-img {
+        width: 72px;
+        height: 85px;
+    }
+
+    &__cart-label {
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $secondColor;
+    }
+
+    &__star {
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #e4af48;
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $mainColor;
+        & span {
+            font-size: 10px;
+            line-height: 1.2;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: $mainColor;
+        }
+    }
+
+    &__cross {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $colorOfI;
+    }
+
+    &__total-price {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-left: 20px;
+        text-transform: uppercase;
+        color: $secondColor;
+        text-align: center;
+        max-width: 225px;
+        & span {
+            &:first-child {
+                margin-right: 110px;
+            }
+        }
+    }
+
+    &__button-chek {
+        margin-top: 30px;
+        width: 225px;
+        height: 50px;
+        border: 1px solid $mainColor;
+        background-color: $whiteColor;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $mainColor;
+        margin-left: 20px;
+        &:hover {
+            transition-duration: 0.3s;
+            background-color: $mainColor;
+            color: $whiteColor;
+        }
+    }
+
+    &__button-go {
+        width: 225px;
+        height: 50px;
+        background-color: $whiteColor;
+        border: 1px solid $borderSlider;
+        margin-left: 20px;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $buttonCheckout;
+        &:hover {
+            transition-duration: 0.3s;
+            background-color: $buttonCheckout;
+            color: $whiteColor;
+        }
     }
 }
 

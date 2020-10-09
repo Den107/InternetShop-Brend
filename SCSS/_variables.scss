@@ -26,3 +26,36 @@ $arrColor: #d8d8d8;
 $arrHover: darkgray;
 $darkGrey: #2f2f2f;
 $container-width: 1140px;
+%downMenuLabel {
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: $darkGrey;
+}
+%downMenuItem {
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: $buttonCheckout;
+}
+%line {
+    width: 100%;
+    border-bottom: 1px solid $sliderBackground;
+}
+%megaMenu {
+    visibility: hidden;
+    position: absolute;
+    width: 846px;
+    height: 310px;
+    background-color: $whiteColor;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    top: 29px;
+}

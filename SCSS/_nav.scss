@@ -1,3 +1,4 @@
+@import "_variables.scss";
 .nav {
     min-height: 50px;
     display: flex;
@@ -5,6 +6,7 @@
     justify-content: center;
 
     &__list {
+        position: relative;
         display: flex;
     }
     &__item {
@@ -29,6 +31,65 @@
             color: $secondColor;
             border-bottom: 2px solid $mainColor;
             margin-right: 50px;
+            &:hover + div {
+                visibility: visible;
+                transition-duration: 0.5s;
+            }
         }
+        &:hover + div {
+            visibility: visible;
+            transition-duration: 0.5s;
+        }
+    }
+    &__mega-menu {
+        &--women {
+            @extend %megaMenu;
+            &:hover {
+                visibility: visible;
+            }
+
+            left: 148px;
+        }
+        &--man {
+            @extend %megaMenu;
+            &:hover {
+                visibility: visible;
+            }
+            left: 65px;
+        }
+        &--kids {
+            @extend %megaMenu;
+            &:hover {
+                visibility: visible;
+            }
+            left: 253px;
+        }
+    }
+
+    &__mega-list {
+        margin-right: 50px;
+    }
+
+    &__mega-label {
+        @extend %downMenuLabel;
+    }
+
+    &__line {
+        @extend %line;
+    }
+
+    &__mega-item {
+        @extend %downMenuItem;
+    }
+
+    &__mega-link {
+        &:hover {
+            border-bottom: 1px solid $secondColor;
+        }
+    }
+
+    &__mega-man {
+        width: 255px;
+        height: 118px;
     }
 }
