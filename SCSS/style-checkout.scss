@@ -19,7 +19,7 @@
     &__input-label {
         display: none;
         &:checked ~ div {
-            display: flex;
+            //display: flex;
             transition-duration: 0.5s;
         }
     }
