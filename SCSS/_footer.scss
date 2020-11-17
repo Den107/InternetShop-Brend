@@ -3,6 +3,7 @@
     margin-top: 100px;
     background: url("../image/index/subscribe-bg.png") no-repeat, $colorShadow;
     background-size: cover;
+    background-position-y: bottom;
     background-blend-mode: lighten;
     &__flex {
         display: flex;
@@ -101,21 +102,23 @@
             background-color: $colorHoverButton;
         }
     }
-    &__line1 {
+    &__lines {
+        min-width: 140px;
+        display: flex;
+        justify-content: space-between;
         position: absolute;
-        top: 307px;
-        left: 107px;
+        top: 306px;
+        left: 104px;
     }
-
-    &__line2 {
-        position: absolute;
-        top: 307px;
-        left: 156px;
-    }
-    &__line3 {
-        position: absolute;
-        top: 307px;
-        left: 210;
+    &__line {
+        width: 38px;
+        height: 4px;
+        background-image: url("../image/index/white_line_sub.png");
+        &--active {
+            width: 38px;
+            height: 4px;
+            background-image: url("../image/index/red_line_sub.png");
+        }
     }
 }
 .information {

@@ -643,6 +643,7 @@ h6 {
   margin-top: 100px;
   background: url("../image/index/subscribe-bg.png") no-repeat, #aaa;
   background-size: cover;
+  background-position-y: bottom;
   background-blend-mode: lighten; }
   .subscribe__flex {
     display: -webkit-box;
@@ -739,18 +740,25 @@ h6 {
       -o-transition-duration: 0.3s;
       transition-duration: 0.3s;
       background-color: #ac4e5a; }
-  .subscribe__line1 {
+  .subscribe__lines {
+    min-width: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     position: absolute;
-    top: 307px;
-    left: 107px; }
-  .subscribe__line2 {
-    position: absolute;
-    top: 307px;
-    left: 156px; }
-  .subscribe__line3 {
-    position: absolute;
-    top: 307px;
-    left: 210; }
+    top: 306px;
+    left: 104px; }
+  .subscribe__line {
+    width: 38px;
+    height: 4px;
+    background-image: url("../image/index/white_line_sub.png"); }
+    .subscribe__line--active {
+      width: 38px;
+      height: 4px;
+      background-image: url("../image/index/red_line_sub.png"); }
 
 .information {
   margin-top: 100px; }
