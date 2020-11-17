@@ -1135,7 +1135,9 @@ h6 {
     text-align: center; }
   .quality__image {
     width: 45px;
-    height: 32px; }
+    height: 32px;
+    -o-object-fit: contain;
+    object-fit: contain; }
   .quality__label {
     margin-top: 30px;
     font-size: 20px;

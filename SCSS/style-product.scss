@@ -314,6 +314,7 @@
     &__image {
         width: 45px;
         height: 32px;
+        object-fit: contain;
     }
 
     &__label {
