@@ -11,22 +11,27 @@ class Burger {
             case "spice":
                 this.price += 15;
                 this.topping = 'специи';
+                break;
             case "mayo":
                 this.price += 20;
                 this.callories += 5;
                 this.topping = 'майонез';
+                break;
             case "cheese":
                 this.price += 10;
                 this.callories += 20;
                 this.topping = 'сыр';
+                break;
             case "salad":
                 this.price += 20;
                 this.callories += 5;
                 this.topping = 'салат';
+                break;
             case "potato":
                 this.price += 15;
                 this.callories += 10;
                 this.topping = 'картошка';
+                break;
             default:
                 console.log('Пожалуйста, введите название добавки, spice, mayo, cheese, salad или potato');
 
