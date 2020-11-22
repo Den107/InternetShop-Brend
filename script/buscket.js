@@ -21,6 +21,32 @@ class Bascket {
      * купить все товары в корзине
      */
     buyAll() { }
+    /**
+     * получение всех товаров в корзине
+     */
+    getAllGoodsInBascket() {
+        function makeGETRequest(url, callback) {
+            let xhr;
+
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    callback(xhr.responseText);
+                }
+            }
+
+            xhr.open('GET', url, true);
+            xhr.send();
+        }
+
+
+        makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json', r => console.log(r))
+    }
 }
 
 /**
@@ -34,10 +60,36 @@ class GoodInBascket {
         this.count = count;
     }
     /**
+     * добавление товаров в корзину
+     */
+    addCount() {
+        function makeGETRequest(url, callback) {
+            let xhr;
+
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    callback(xhr.responseText);
+                }
+            }
+
+            xhr.open('GET', url, true);
+            xhr.send();
+        }
+
+
+        makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/addToBasket.json', r => console.log(r))
+    }
+    /**
      * увеличение количества определенного товара в корзине 
      * @param {number} item 
      */
-    addCount(item) {
+    plusCount(item) {
         this.count += item;
     }
     /**
@@ -53,5 +105,27 @@ class GoodInBascket {
     /**
     * удаление товара из корзины
     */
-    removeGood() { }
+    removeGood() {
+        function makeGETRequest(url, callback) {
+            let xhr;
+
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    callback(xhr.responseText);
+                }
+            }
+
+            xhr.open('GET', url, true);
+            xhr.send();
+        }
+
+
+        makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/deleteFromBasket.json', r => console.log(r))
+    }
 }
