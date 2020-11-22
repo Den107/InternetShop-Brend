@@ -1,6 +1,7 @@
 'use strict';
 /**
  * класс для корзины
+ * count - количество товаров в корзине
  */
 class Bascket {
     constructor(count) {
