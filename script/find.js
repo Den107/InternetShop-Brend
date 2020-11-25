@@ -1,18 +1,20 @@
 'use strict';
 
-let findInput = document.getElementById('inp').value;
-let findButton = document.querySelector('.header__search-button');
-let nameOfProduct = document.querySelector('.fetured-item__title');
+let input = document.getElementById('searchInp');
+let findButton = document.getElementById('searchBtn');
+let nameOfProduct = document.querySelectorAll('.fetured-item__title');
 
 findButton.addEventListener('click', findItem);
 
-console.dir(nameOfProduct.parentNode.style);
+
 
 
 function findItem() {
-
-    if (findInput === nameOfProduct.innerHTML) {
-        nameOfProduct.parentNode.style.display = 'none';
-    }
+    let value = input.value;
+    nameOfProduct.forEach(name => {
+        if (name.innerText !== value) {
+            name.parentNode.style = 'display: none;';
+        }
+    })
 }
 
