@@ -1,4 +1,28 @@
 'use strict';
+
+function makeGETRequest(url, callback) {
+    let xhr;
+
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+            callback(xhr.responseText);
+        }
+    }
+
+    xhr.open('GET', url, true);
+    xhr.send();
+}
+
+
+makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json', r => console.log(r))
+
+
 /**
  * класс для корзины
  * count - количество товаров в корзине
@@ -25,25 +49,6 @@ class Bascket {
      * получение всех товаров в корзине
      */
     getAllGoodsInBascket() {
-        function makeGETRequest(url, callback) {
-            let xhr;
-
-            if (window.XMLHttpRequest) {
-                xhr = new XMLHttpRequest();
-            } else if (window.ActiveXObject) {
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === 4) {
-                    callback(xhr.responseText);
-                }
-            }
-
-            xhr.open('GET', url, true);
-            xhr.send();
-        }
-
 
         makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json', r => console.log(r))
     }
@@ -63,25 +68,6 @@ class GoodInBascket {
      * добавление товаров в корзину
      */
     addCount() {
-        function makeGETRequest(url, callback) {
-            let xhr;
-
-            if (window.XMLHttpRequest) {
-                xhr = new XMLHttpRequest();
-            } else if (window.ActiveXObject) {
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === 4) {
-                    callback(xhr.responseText);
-                }
-            }
-
-            xhr.open('GET', url, true);
-            xhr.send();
-        }
-
 
         makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/addToBasket.json', r => console.log(r))
     }
@@ -106,25 +92,6 @@ class GoodInBascket {
     * удаление товара из корзины
     */
     removeGood() {
-        function makeGETRequest(url, callback) {
-            let xhr;
-
-            if (window.XMLHttpRequest) {
-                xhr = new XMLHttpRequest();
-            } else if (window.ActiveXObject) {
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === 4) {
-                    callback(xhr.responseText);
-                }
-            }
-
-            xhr.open('GET', url, true);
-            xhr.send();
-        }
-
 
         makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/deleteFromBasket.json', r => console.log(r))
     }
