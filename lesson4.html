@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        Lorem i'psum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet ligula tortor, vel aliquet felis
+        pellentesque sit amet. Phasellus 'fermentum' finibus dui, ac varius urna ultricies sed. Sed pe'llentesque mollis
+        mi vel dictum. P'roin eu placerat metus. Nu'llam venenatis in lorem 'quis' malesuada. Cras 'nulla' odio,
+        hendrerit in 'commodo' sit amet, bibendum ut neque. Integer efficitur quam eget gravida pulvinar. Donec vel
+        scelerisque lorem. Nulla ut lobortis urna. 'Nunc' tellus felis, vehicula ut elementum sed, luctus non urna.
+        Nulla ut 'nisl' faucibus ante porttitor lacinia vel sit a'met sem. In 'ornare' convallis eros nec laoreet. U't
+        accumsan erat at 'nulla euismod', sit amet faucibus nisi venenatis.
+    </p>
+    <button>Изменить кавычки</button>
+    <script>
+        'use strict';
+
+        let button = document.querySelector('button');
+        let text = document.querySelector('p');
+
+        button.addEventListener('click', rename);
+
+        function rename() {
+
+            let re = /'/gm;
+            //let re = /'(?!\w)/gm;
+            let re2 = /\b"\b/gm;
+            text.innerText = text.innerText.replace(re, '"');
+            text.innerText = text.innerText.replace(re2, "'");
+        }
+    </script>
+</body>
+
+</html>
