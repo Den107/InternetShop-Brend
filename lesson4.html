@@ -52,12 +52,8 @@
         button.addEventListener('click', rename);
 
         function rename() {
-
-            let re = /'/gm;
-            //let re = /'(?!\w)/gm;
-            let re2 = /\b"\b/gm;
+            let re = /\B'|'\B/gm;
             text.innerText = text.innerText.replace(re, '"');
-            text.innerText = text.innerText.replace(re2, "'");
         }
 
         //это третье
