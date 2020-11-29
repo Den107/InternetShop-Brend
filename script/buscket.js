@@ -2,6 +2,33 @@
 const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/lesson5/responses/getProducts.json';
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
+
+// class List {
+//     constructor(url, container, list = listContext) {
+//         this.container = container;
+//         this.list = list;
+//         this.url = url;
+//         this.goods = [];
+//         this.allProducts = [];
+//         this.filtred = [];
+//         this._init();
+//     }
+
+
+//     getJson(url) {
+//         return fetch(url ? url : `${API + this.url}`)
+//             .then(result => result.json())
+//             .catch(error => {
+//                 console.log(error);
+//             })
+//     }
+
+//     handleData(data) {
+//         this.goods = [...data];
+//         this.render();
+//     }
+// }
+
 class GoodsItem {
     constructor(product, color = 'red', size = 'XL', img = 'https://placehold.it/263x280') {
         this.name = product.name;
@@ -56,11 +83,11 @@ class GoodList {
     }
 
 }
-new GoodList();
+//new GoodList();
 
 
 class GoodInBascket extends GoodsItem {
-    constructor(name, price, color, size, img, count, shipping = 'FREE') {
+    constructor(name, price, color, size, img, count = 1, shipping = 'FREE') {
         super(name, price, color, size, img);
         this.count = count; // количество товара в корзине
         this.shipping = shipping; //стоимость доставки
