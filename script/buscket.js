@@ -1,4 +1,5 @@
 'use strict';
+const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/lesson5/responses/getProducts.json';
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 class GoodsItem {
@@ -22,45 +23,20 @@ class GoodList {
         this._goods = [];
         this._allProducts = [];
 
-        this._fetchGoods();
-        this._render();
+        this._fetchGoods().then((data) => {
+            this._goods = [...data];
+            this._render();
+        })
         this.goodsSum();
     }
 
 
     _fetchGoods() {
-        this._goods = [
-            {
-                id: 1,
-                name: 'Куртка',
-                price: 1000
-            },
-            {
-                id: 2,
-                name: 'Блузка',
-                price: 500
-            },
-            {
-                id: 3,
-                name: 'Рубашка',
-                price: 2300
-            },
-            {
-                id: 4,
-                name: 'Джинсы',
-                price: 1400
-            },
-            {
-                id: 5,
-                name: 'Свитер',
-                price: 850
-            },
-            {
-                id: 6,
-                name: 'Кроссовки',
-                price: 7100
-            }
-        ]
+        return fetch(myAPI)
+            .then(response => response.json())
+            .catch((error) => {
+                console.log(error);
+            })
     }
     _render() {
         const block = document.querySelector(this.container);
@@ -142,20 +118,19 @@ class GoodInBascket extends GoodsItem {
 }
 
 class Bascket extends GoodOfBascket {
-    constructor(markup, discount, shipping) {
-        super(markup, shipping);
+    constructor(discount, shipping) {
+        super(shipping);
         this.discount = discount; //скидка
         this.goods = [];// список товаров
     }
 
     addItem() {
         // метод добавления товара в корзину
-        makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/addToBasket.json').then((data) => {
-            let productObject = JSON.parse(data);
-            console.log(productObject);
-        }).catch((error) => {
-            console.log(error);
-        })
+        return fetch(`${API}/addToBasket.json`)
+            .then(response => response.json())
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     costOfShipping() {
@@ -165,12 +140,11 @@ class Bascket extends GoodOfBascket {
     deleteGood() {
         // удаляет товар из корзины, если количесто товара = 0,
         // то также задействуется этот метод
-        makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/deleteFromBasket.json').then((data) => {
-            let productObject = JSON.parse(data);
-            console.log(productObject);
-        }).catch((error) => {
-            console.log(error);
-        })
+        return fetch(`${API}/deleteFromBasket.json`)
+            .then(response => response.json())
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     clearBascket() {
@@ -182,12 +156,11 @@ class Bascket extends GoodOfBascket {
     }
 
     renderBascket() {
-        makeGETRequest('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json').then((data) => {
-            let productObject = JSON.parse(data);
-            console.log(productObject);
-        }).catch((error) => {
-            console.log(error);
-        })
+        return fetch(`${API}/getBasket.json`)
+            .then(response => response.json())
+            .catch((error) => {
+                console.log(error);
+            })
         // наполняет корзину элементами, с помощью renderGoodInBascketBig()
     }
 }
