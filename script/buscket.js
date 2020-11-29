@@ -2,36 +2,106 @@
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 class GoodsItem {
-    constructor(name, price, color, size, img) {
-        this.name = name;
-        this.price = price;
+    constructor(product, color = 'red', size = 'XL', img = 'https://placehold.it/263x280') {
+        this.name = product.name;
+        this.price = product.price;
+        this.id = product.id;
         this.color = color;
         this.size = size;
         this.img = img;
     }
     render() {
-        return `<div class="fetured-item content__fetured-item"><div class="fetured-item__hidden"><button class="fetured-item__cart"> <img src= "image/index/cart_featured.png"alt="bascket"><p>Add to Cart</p> </button> </div><img src=${this.img} alt="item"><p class="fetured-item__title">${this.name}</p><p class="fetured-item__subtitle">${this.price}</p></div>`
+        return `<div class="fetured-item content__fetured-item" data-id="${this.id}"><div class="fetured-item__hidden"><button class="fetured-item__cart"> <img src= "image/index/cart_featured.png"alt="bascket"><p>Add to Cart</p> </button> </div><img src=${this.img} alt="item"><p class="fetured-item__title">${this.name}</p><p class="fetured-item__subtitle">$${this.price}</p></div>`
     }
 }
 
-class GoodOfBascket extends GoodsItem {
-    constructor(name, price, color, size, img, number) {
+
+class GoodList {
+    constructor(container = '.content__main') {
+        this.container = container;
+        this._goods = [];
+        this._allProducts = [];
+
+        this._fetchGoods();
+        this._render();
+        this.goodsSum();
+    }
+
+
+    _fetchGoods() {
+        this._goods = [
+            {
+                id: 1,
+                name: 'Куртка',
+                price: 1000
+            },
+            {
+                id: 2,
+                name: 'Блузка',
+                price: 500
+            },
+            {
+                id: 3,
+                name: 'Рубашка',
+                price: 2300
+            },
+            {
+                id: 4,
+                name: 'Джинсы',
+                price: 1400
+            },
+            {
+                id: 5,
+                name: 'Свитер',
+                price: 850
+            },
+            {
+                id: 6,
+                name: 'Кроссовки',
+                price: 7100
+            }
+        ]
+    }
+    _render() {
+        const block = document.querySelector(this.container);
+        for (let product of this._goods) {
+            const productObject = new GoodsItem(product);
+            this._allProducts.push(productObject);
+            block.insertAdjacentHTML('beforeend', productObject.render())
+        }
+    }
+    goodsSum() {
+        // считаем итоговую стоимость покупки
+        let sum = 0;
+        this._goods.forEach(good => {
+            sum += good.price;
+        });
+        console.log(sum);
+    }
+
+}
+new GoodList();
+
+
+class GoodInBascket extends GoodsItem {
+    constructor(name, price, color, size, img, count, shipping = 'FREE') {
         super(name, price, color, size, img);
-        this.number = number; // количество товара в корзине
+        this.count = count; // количество товара в корзине
+        this.shipping = shipping; //стоимость доставки
     }
 
     priceOfElement() {
         //подсчет стоимости одного товара, в зависимости от колличества
-        return this.price * this.number;
+        return this.price * this.count;
     }
 
-    changeNumber() {
+    changeCount() {
         // изменение количества выбранного товара в корзине
-        return this.number;
+        return this.count;
     }
 
-    renderGoodInBascket() {
-        // отрисовка элемента корзины
+    renderGoodInBascketSmall() {
+        // отрисовка элемента корзины в шапке
         return `<div class="header__cart">
         <img class="header__cart-img" src=${this.img} alt="basck">
         <div class="header__context">
@@ -48,13 +118,33 @@ class GoodOfBascket extends GoodsItem {
         <i class="fas fa-times-circle header__cross" aria-hidden="true"></i>
     </div>`
     }
+    renderGoodInBascketBig() {
+        //отрисовка элемента корзины на странице корзины
+        return `<div class="product-details__item product-details-item">
+        <div class="product-details-item__left">
+            <img class="product-details-item__image" src="${this.img}" alt="man1">
+            <div class="product-details-item__content">
+                <h4 class="product-details-item__name">${this.name}</h4>
+                <p class="product-details-item__color">Color: <span>${this.color}</span></p>
+                <p class="product-details-item__size">Size: <span>${this.size}</span></p>
+            </div>
+        </div>
+        <div class="product-details-item__right">
+            <p class="product-details-item__price">$${this.price}</p>
+            <input class="product-details-item__quantity" type="number" name="quantity" value="${this.count}">
+            <p class="product-details-item__shipping">${this.shipping}</p>
+            <p class="product-details-item__subtotal">$${this.priceOfElement()}</p>
+            <a href="#"><i class="fas fa-times-circle" aria-hidden="true"></i></a>
+
+        </div>
+    </div>`
+    }
 }
 
 class Bascket extends GoodOfBascket {
     constructor(markup, discount, shipping) {
-        super(markup);
+        super(markup, shipping);
         this.discount = discount; //скидка
-        this.shipping = shipping; //стоимость доставки
         this.goods = [];// список товаров
     }
 
@@ -66,10 +156,6 @@ class Bascket extends GoodOfBascket {
         }).catch((error) => {
             console.log(error);
         })
-    }
-
-    typeOfShipping() {
-        // определение способа доставки
     }
 
     costOfShipping() {
@@ -102,48 +188,6 @@ class Bascket extends GoodOfBascket {
         }).catch((error) => {
             console.log(error);
         })
-        // наполняет корзину элементами, с помощью renderGoodInBascket()
-    }
-    fetchGoods() {
-        this.goods = [
-            {
-                name: 'Куртка',
-                price: 1000
-            },
-            {
-                name: 'Блузка',
-                price: 500
-            },
-            {
-                name: 'Рубашка',
-                price: 2300
-            },
-            {
-                name: 'Джинсы',
-                price: 1400
-            },
-            {
-                name: 'Свитер',
-                price: 850
-            },
-            {
-                name: 'Кроссовки',
-                price: 7100
-            },
-        ]
-    }
-    goodsSum() {
-        // считаем итоговую стоимость покупки
-        let sum = 0;
-        this.goods.forEach(good => {
-            sum += good.price;
-        });
-        console.log(sum);
-
+        // наполняет корзину элементами, с помощью renderGoodInBascketBig()
     }
 }
-// второе задание второго урока
-
-let list = new Bascket();
-list.fetchGoods();
-list.goodsSum();
