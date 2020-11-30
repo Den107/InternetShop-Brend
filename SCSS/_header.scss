@@ -111,10 +111,10 @@
     }
     &__bascket-inp {
         display: none;
-        &:checked ~ .header__bascket-menu,
-        &:active ~ .header__bascket-menu {
-            visibility: visible;
-        }
+        // &:checked ~ .header__bascket-menu,
+        // &:active ~ .header__bascket-menu {
+        //     visibility: visible;
+        // }
     }
     &__bascket {
         width: 32px;
@@ -126,10 +126,11 @@
         @extend %line;
     }
     &__bascket-menu {
-        visibility: hidden;
+        display: none;
+        // visibility: hidden;
         position: absolute;
         min-width: 262px;
-        min-height: 440px;
+        // min-height: 440px;
         background-color: $whiteColor;
         border-radius: 5px;
         display: flex;
@@ -240,6 +241,8 @@
         font-weight: 700;
         text-transform: uppercase;
         color: $buttonCheckout;
+        margin-top: 10px;
+        margin-bottom: 10px;
         &:hover {
             transition-duration: 0.3s;
             background-color: $buttonCheckout;

@@ -3,31 +3,6 @@ const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/lesso
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 
-// class List {
-//     constructor(url, container, list = listContext) {
-//         this.container = container;
-//         this.list = list;
-//         this.url = url;
-//         this.goods = [];
-//         this.allProducts = [];
-//         this.filtred = [];
-//         this._init();
-//     }
-
-
-//     getJson(url) {
-//         return fetch(url ? url : `${API + this.url}`)
-//             .then(result => result.json())
-//             .catch(error => {
-//                 console.log(error);
-//             })
-//     }
-
-//     handleData(data) {
-//         this.goods = [...data];
-//         this.render();
-//     }
-// }
 
 class GoodsItem {
     constructor(product, color = 'red', size = 'XL', img = 'https://placehold.it/263x280') {
