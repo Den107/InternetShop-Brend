@@ -319,8 +319,27 @@
                         Price</span><span>Quantity</span><span>shipping</span><span>Subtotal</span><span>ACTION</span>
                 </div>
             </div>
+            <div class="product-details__item product-details-item" v-for="product of filtered"
+                :key="product.id_product">
+                <div class="product-details-item__left">
+                    <img class="product-details-item__image" :src="imgCatalog" alt="man1">
+                    <div class="product-details-item__content">
+                        <h4 class="product-details-item__name">{{product.name}}</h4>
+                        <p class="product-details-item__color">Color: <span>Red</span></p>
+                        <p class="product-details-item__size">Size: <span>Xll</span></p>
+                    </div>
+                </div>
+                <div class="product-details-item__right">
+                    <p class="product-details-item__price">${{product.price}}</p>
+                    <input class="product-details-item__quantity" type="number" name="quantity">
+                    <p class="product-details-item__shipping">FREE</p>
+                    <p class="product-details-item__subtotal">$300</p>
+                    <a href="#"><i class="fas fa-times-circle"></i></a>
+
+                </div>
+            </div>
             <div class="line"></div>
-            <div class="product-details__item product-details-item">
+            <!-- <div class="product-details__item product-details-item">
                 <div class="product-details-item__left">
                     <img class="product-details-item__image" src="image/shopping-cart/product_details1.png" alt="man1">
                     <div class="product-details-item__content">
@@ -337,8 +356,8 @@
                     <a href="#"><i class="fas fa-times-circle"></i></a>
 
                 </div>
-            </div>
-            <div class="line"></div>
+            </div> -->
+            <!-- <div class="line"></div>
             <div class="product-details__item product-details-item">
                 <div class="product-details-item__left">
                     <img class="product-details-item__image" src="image/shopping-cart/product_details2.png" alt="man1">
@@ -375,7 +394,7 @@
                     <a href="#"><i class="fas fa-times-circle"></i></a>
 
                 </div>
-            </div>
+            </div> -->
             <div class="line"></div>
             <div class="product-details__buttons">
                 <button class="product-details__button">cLEAR SHOPPING CART</button>
