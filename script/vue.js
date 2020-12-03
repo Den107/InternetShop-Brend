@@ -1,5 +1,5 @@
 'use strict';
-const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/lesson5/responses';
+const myAPI1 = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/master/responses';
 
 const app = new Vue({
     el: '#app',
@@ -28,7 +28,7 @@ const app = new Vue({
 
     },
     mounted() {
-        this.getJson(`${myAPI + this.catalogUrl}`)
+        this.getJson(`${myAPI1 + this.catalogUrl}`)
             .then(data => {
                 for (let el of data) {
                     this.products.push(el);

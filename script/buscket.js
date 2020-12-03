@@ -1,5 +1,5 @@
 'use strict';
-const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/lesson5/responses/getProducts.json';
+const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/master/responses/getProducts.json';
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 
@@ -58,7 +58,7 @@ class GoodList {
     }
 
 }
-//new GoodList();
+new GoodList();
 
 
 class GoodInBascket extends GoodsItem {
@@ -119,7 +119,7 @@ class GoodInBascket extends GoodsItem {
     }
 }
 
-class Bascket extends GoodOfBascket {
+class Bascket extends GoodInBascket {
     constructor(discount, shipping) {
         super(shipping);
         this.discount = discount; //скидка
