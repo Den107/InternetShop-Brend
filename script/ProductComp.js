@@ -57,10 +57,8 @@ Vue.component('product', {
 
         `<div class="fetured-item content__fetured-item product-item">
                         <div class="fetured-item__hidden">
-                            <button class="fetured-item__cart buy-btn" @click="cartAPI.addProduct(product)>
-                                <img src="image/index/cart_featured.png" alt="bascket">
-                                <p>Add to Cart</p>
-                            </button>
+                            <button class="fetured-item__cart buy-btn" @click="cartAPI.addProduct(product)"><img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p></button>
                         </div>
                         <img :src="img" alt="item">
                         <p class="fetured-item__title">{{product.name}}</p>
