@@ -66,5 +66,6 @@ Vue.component('product', {
                         <p class="fetured-item__title">{{product.name}}</p>
                         <p class="fetured-item__subtitle">{{product.price}}$</p>
                     </div>`
+    //todo решить вопрос с кнопкой
 
 });
