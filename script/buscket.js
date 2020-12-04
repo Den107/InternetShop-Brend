@@ -14,7 +14,13 @@ class GoodsItem {
         this.img = img;
     }
     render() {
-        return `<div class="fetured-item content__fetured-item" data-id="${this.id}"><div class="fetured-item__hidden"><button class="fetured-item__cart"> <img src= "image/index/cart_featured.png"alt="bascket"><p>Add to Cart</p> </button> </div><img src=${this.img} alt="item"><p class="fetured-item__title">${this.name}</p><p class="fetured-item__subtitle">$${this.price}</p></div>`
+        return `<div class="fetured-item content__fetured-item" data-id="${this.id}">
+        <div class="fetured-item__hidden">
+        <button class="fetured-item__cart"> 
+        <img src= "image/index/cart_featured.png"alt="bascket">
+        <p>Add to Cart</p> </button> </div>
+        <img src=${this.img} alt="item">
+        <p class="fetured-item__title">${this.name}</p><p class="fetured-item__subtitle">$${this.price}</p></div>`
     }
 }
 

@@ -57,7 +57,10 @@ Vue.component('cart', {
                 :img="imgCart"
                 @remove="remove">
                 </cart-item>
+                <button class="header__button-chek">Checkout</button>
+                <button class="header__button-go">Go to cart</button>
             </div>
+           
         </div>`
 });
 
@@ -84,7 +87,7 @@ Vue.component('cart-item', {
         `<div class="header__cart">
         <img class="header__cart-img" :src="img" alt="basck">
         <div class="header__context">
-            <h3 class="header__cart-label">{{cartItem.product_name}}</h3>
+            <h3 class="header__cart-label">{{cartItem.name}}</h3>
             <div class="header__starts">
                 <i class="fas fa-star header__star" aria-hidden="true"></i>
                 <i class="fas fa-star header__star" aria-hidden="true"></i>
@@ -92,8 +95,8 @@ Vue.component('cart-item', {
                 <i class="fas fa-star header__star" aria-hidden="true"></i>
                 <i class="fas fa-star-half-alt header__star" aria-hidden="true"></i>
             </div>
-            <p class="header__price">{{cartItem.quantity}}<span>x</span>{{cartItem.price}}</p>
-            <p class="product-price">{{cartItem.quantity*cartItem.price}}₽</p>
+            <p class="header__price">{{cartItem.quantity}}<span>x</span>{{cartItem.quantity*cartItem.price}}</p>
+            
         </div>
         <button class="del-btn" @click="$emit('remove', cartItem)"><i class="fas fa-times-circle header__cross" aria-hidden="true"></i></button>
     </div>`

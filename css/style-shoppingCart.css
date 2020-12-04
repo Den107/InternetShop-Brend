@@ -230,6 +230,7 @@ h6 {
     margin-right: 30px;
     margin-top: 6px; }
   .header__bascket-menu {
+    display: none;
     position: absolute;
     min-width: 262px;
     background-color: #ffffff;
@@ -263,7 +264,8 @@ h6 {
     flex-direction: column; }
   .header__cart-img {
     width: 72px;
-    height: 85px; }
+    height: 85px;
+    margin-right: 5px; }
   .header__cart-label {
     font-size: 12px;
     line-height: 1.2;
@@ -363,6 +365,19 @@ h6 {
     width: 59px;
     height: 51px;
     margin-right: 10px; }
+
+.btn-cart {
+  margin-right: 53px;
+  margin-top: 12px; }
+
+.cart-block {
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  padding: 10px; }
+
+.del-btn {
+  margin-left: 5px; }
 
 .header__label-down-menu, .nav__mega-label {
   font-size: 14px;

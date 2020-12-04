@@ -38,6 +38,7 @@
 //     }
 // })
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/master/responses';
 
 const app = new Vue({
     el: '#app',

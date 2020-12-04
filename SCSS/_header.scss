@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     &__left {
         display: flex;
         align-items: center;
@@ -152,6 +153,7 @@
     &__cart-img {
         width: 72px;
         height: 85px;
+        margin-right: 5px;
     }
 
     &__cart-label {
@@ -268,4 +270,17 @@
         height: 51px;
         margin-right: 10px;
     }
+}
+.btn-cart {
+    margin-right: 53px;
+    margin-top: 12px;
+}
+.cart-block {
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    padding: 10px;
+}
+.del-btn {
+    margin-left: 5px;
 }
