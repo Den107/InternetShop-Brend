@@ -17,7 +17,8 @@
 
             <div class="header__left">
                 <a class="header__logo logo" href="index.html">Bran<span>D</span></a>
-                <form class="header__form-search" method="GET">
+                <filter-el ref="filter-el"></filter-el>
+                <!-- <form class="header__form-search" method="GET">
                     <input class="header__browse-input" type="checkbox" value="" id="inp">
                     <label for="inp">
                         <div class="header__browse-button">Browse <i class="fas fa-caret-down"></i></div>
@@ -73,13 +74,17 @@
                         placeholder="Search for Item...">
                     <button class="header__search-button" type="submit" id="searchBtn"><i
                             class="fas fa-search"></i></button>
-                </form>
+                </form> -->
             </div>
-            <div class="header__rigth">
-                <input class="header__bascket-inp" type="checkbox" id="bascket" @click="isVisibleCart = !isVisibleCart">
-                <label for="bascket"> <img class="header__bascket" src="image/index/bascket.png" alt="bascket"></label>
-                <div class="header__bascket-menu" v-show="isVisibleCart">
-                    <!-- <div class="header__cart">
+            <div class="header__rigth" style="
+            display: flex;">
+                <cart ref="cart">
+                    <!-- <input class="header__bascket-inp" type="checkbox" id="bascket"
+                        @click="isVisibleCart = !isVisibleCart">
+                    <label for="bascket"> <img class="header__bascket" src="image/index/bascket.png"
+                            alt="bascket"></label>
+                    <div class="header__bascket-menu" v-show="isVisibleCart">
+                        <div class="header__cart">
                         <img class="header__cart-img" src="image/index/bascket_menu1.png" alt="basck">
                         <div class="header__context">
                             <h3 class="header__cart-label">Rebox Zane</h3>
@@ -110,13 +115,14 @@
                         </div>
                         <i class="fas fa-times-circle header__cross"></i>
                     </div>
-                    <div class="heder__line"></div> -->
-                    <p class="header__total-price">
-                        <span>TOTAL</span> <span>$500.00</spa>
-                    </p>
-                    <button class="header__button-chek">Checkout</button>
-                    <button class="header__button-go">Go to cart</button>
-                </div>
+                    <div class="heder__line"></div>
+                        <p class="header__total-price">
+                            <span>TOTAL</span> <span>$500.00</spa>
+                        </p>
+                        <button class="header__button-chek">Checkout</button>
+                        <button class="header__button-go">Go to cart</button>
+                    </div> -->
+                </cart>
                 <button class="header__button-myAccount">My Account <i class="fas fa-caret-down"></i></button>
             </div>
 
@@ -474,7 +480,7 @@
                             </select></div>
                     </div>
                 </form>
-                <div class="content__main">
+                <products ref="products" class="content__main">
                     <!-- <div class="fetured-item content__fetured-item">
                         <div class="fetured-item__hidden">
                             <button class="fetured-item__cart">
@@ -574,7 +580,7 @@
                         <p class="fetured-item__title">Mango People T-shirt</p>
                         <p class="fetured-item__subtitle">$52.00</p>
                     </div> -->
-                </div>
+                </products>
                 <div class="content__footer">
                     <div class="content__pagination">
                         <i class="fas fa-angle-left"></i>
@@ -741,10 +747,13 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script/CartComp.js"></script>
+    <script src="script/ProductComp.js"></script>
+    <script src="script/FilterComp.js"></script>
     <script src="script/vue.js"></script>
-    <script src="script/find.js"></script>
+    <!-- <script src="script/find.js"></script> -->
     <!-- <script src="script/bascket.js"></script> -->
-    <script src="script/buscket.js"></script>
+    <!-- <script src="script/buscket.js"></script> -->
 </body>
 
 </html>

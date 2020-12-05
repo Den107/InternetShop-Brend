@@ -1,31 +1,31 @@
 [
     {
-        "id": 1,
+        "id_product": 1,
         "name": "Куртка",
         "price": 1000
     },
     {
-        "id": 2,
+        "id_product": 2,
         "name": "Блузка",
         "price": 500
     },
     {
-        "id": 3,
+        "id_product": 3,
         "name": "Рубашка",
         "price": 2300
     },
     {
-        "id": 4,
+        "id_product": 4,
         "name": "Джинсы",
         "price": 1400
     },
     {
-        "id": 5,
+        "id_product": 5,
         "name": "Свитер",
         "price": 850
     },
     {
-        "id": 6,
+        "id_product": 6,
         "name": "Кроссовки",
         "price": 7100
     }
