@@ -367,8 +367,12 @@ h6 {
     margin-right: 10px; }
 
 .btn-cart {
-  margin-right: 53px;
-  margin-top: 12px; }
+  margin-right: 34px;
+  margin-top: 6px;
+  background-color: white;
+  width: 32px;
+  height: 29px;
+  background-image: url("/image/index/bascket.png"); }
 
 .cart-block {
   position: absolute;
