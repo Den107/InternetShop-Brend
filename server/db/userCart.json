@@ -3,16 +3,22 @@
     "countGoods": 2,
     "contents": [
         {
-            "id_product": 2,
-            "name": "Блузка",
-            "price": 500,
-            "quantity": 1
-        },
-        {
             "quantity": 1,
             "id_product": 3,
             "name": "Рубашка",
             "price": 2300
+        },
+        {
+            "quantity": 1,
+            "id_product": 1,
+            "name": "Куртка",
+            "price": 1000
+        },
+        {
+            "quantity": 1,
+            "id_product": 6,
+            "name": "Кроссовки",
+            "price": 7100
         }
     ]
 }
