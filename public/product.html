@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница товаров</title>
-    <link rel="stylesheet" href="css/style-shoppingCart.css">
+    <title>Product</title>
+    <link rel="stylesheet" href="css/style-product.css">
     <script src="https://kit.fontawesome.com/d806e712ce.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <!--header---------------------------------------------------------------------------->
     <div id="app">
         <header class="header container">
 
             <div class="header__left">
                 <a class="header__logo logo" href="index.html">Bran<span>D</span></a>
-                <form class="header__form-search" method="GET" @submit.prevent="filterGoods()">
-                    <input class="header__browse-input" type="checkbox" id="inp">
+                <filter-el ref="filter-el"></filter-el>
+                <!-- <form class="header__form-search" method="GET">
+                    <input class="header__browse-input" type="checkbox" value="" id="inp">
                     <label for="inp">
                         <div class="header__browse-button">Browse <i class="fas fa-caret-down"></i></div>
                     </label>
@@ -68,16 +70,21 @@
                             </li>
                         </ul>
                     </div>
-                    <input class="header__imput" type="text" name="search" placeholder="Search for Item..."
-                        v-model="searchLine">
-                    <button class="header__search-button"><i class="fas fa-search"></i></button>
-                </form>
+                    <input class="header__imput" type="text" name="search" id="searchInp"
+                        placeholder="Search for Item...">
+                    <button class="header__search-button" type="submit" id="searchBtn"><i
+                            class="fas fa-search"></i></button>
+                </form> -->
             </div>
-            <div class="header__rigth">
-                <input class="header__bascket-inp" type="checkbox" id="bascket" @click="isVisibleCart = !isVisibleCart">
-                <label for="bascket"> <img class="header__bascket" src="image/index/bascket.png" alt="bascket"></label>
-                <div class="header__bascket-menu" v-show="isVisibleCart">
-                    <div class="header__cart">
+            <div class="header__rigth" style="
+            display: flex;">
+                <cart ref="cart">
+                    <!-- <input class="header__bascket-inp" type="checkbox" id="bascket"
+                        @click="isVisibleCart = !isVisibleCart">
+                    <label for="bascket"> <img class="header__bascket" src="image/index/bascket.png"
+                            alt="bascket"></label>
+                    <div class="header__bascket-menu" v-show="isVisibleCart">
+                        <div class="header__cart">
                         <img class="header__cart-img" src="image/index/bascket_menu1.png" alt="basck">
                         <div class="header__context">
                             <h3 class="header__cart-label">Rebox Zane</h3>
@@ -109,12 +116,13 @@
                         <i class="fas fa-times-circle header__cross"></i>
                     </div>
                     <div class="heder__line"></div>
-                    <p class="header__total-price">
-                        <span>TOTAL</span> <span>$500.00</spa>
-                    </p>
-                    <button class="header__button-chek">Checkout</button>
-                    <button class="header__button-go">Go to cart</button>
-                </div>
+                        <p class="header__total-price">
+                            <span>TOTAL</span> <span>$500.00</spa>
+                        </p>
+                        <button class="header__button-chek">Checkout</button>
+                        <button class="header__button-go">Go to cart</button>
+                    </div> -->
+                </cart>
                 <button class="header__button-myAccount">My Account <i class="fas fa-caret-down"></i></button>
             </div>
 
@@ -124,7 +132,7 @@
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.html">Home</a></li>
-                <li class="nav__item--active"><a href="shoppingCart.html">Man</a></li>
+                <li class="nav__item"><a href="shoppingCart.html">Man</a></li>
                 <div class="nav__mega-menu--man">
                     <ul class="nav__mega-list">
                         <h3 class="nav__mega-label">Man</h3>
@@ -289,7 +297,7 @@
                     </ul>
                     <img class="nav__mega-man" src="image/index/mega_menu_man.png" alt="man">
                 </div>
-                <li class="nav__item"><a href="product.html">Accoseriese</a></li>
+                <li class="nav__item--active"><a href="product.html">Accoseriese</a></li>
                 <li class="nav__item"><a href="#">Featured</a></li>
                 <li class="nav__item"><a href="#">Hot Deals</a></li>
             </ul>
@@ -311,123 +319,315 @@
                 </div>
             </div>
         </div>
-        <!--body--------------------------------------------------------------------------------->
-        <div class="product-details container">
-            <div class="product-details__menu">
-                <div class="product-details__left">Product Details</div>
-                <div class="product-details__right"> <span>unite
-                        Price</span><span>Quantity</span><span>shipping</span><span>Subtotal</span><span>ACTION</span>
-                </div>
+        <!--body---------------------------------------------------------------------------->
+        <div class="content container">
+            <div class="content__left aside-menu">
+                <button class="aside-menu__category">
+                    <input type="checkbox" id="category" name="category">
+                    Category
+                    <i class="fas fa-caret-up"></i>
+                </button>
+                <ul class="aside-menu__list">
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Accessories
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Bags
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Denim
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Hoodies & Sweatshirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Jackets & Coats
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Pants
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Polos
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shoes
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shorts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Sweaters & Knits
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">T-Shirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Tanks</a></li>
+                </ul>
+
+                <button class="aside-menu__category">
+                    <input type="checkbox" id="category" name="category">
+                    BRAND
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <ul class="aside-menu__list">
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Accessories
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Bags
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Denim
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Hoodies & Sweatshirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Jackets & Coats
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Pants
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Polos
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shoes
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shorts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Sweaters & Knits
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">T-Shirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Tanks</a></li>
+                </ul>
+
+
+                <button class="aside-menu__category">
+                    <input type="checkbox" id="category" name="category">
+                    dESIGNER
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <ul class="aside-menu__list">
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Accessories
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Bags
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Denim
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Hoodies & Sweatshirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Jackets & Coats
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Pants
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Polos
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shoes
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Shorts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Sweaters & Knits
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">T-Shirts
+                        </a></li>
+                    <li class="aside-menu__items"><a href="#" class="aside-menu__link">Tanks</a></li>
+                </ul>
+
+
             </div>
-            <div class="product-details__item product-details-item" v-for="product of filtered"
-                :key="product.id_product">
-                <div class="product-details-item__left">
-                    <img class="product-details-item__image" :src="imgCatalog" alt="man1">
-                    <div class="product-details-item__content">
-                        <h4 class="product-details-item__name">{{product.name}}</h4>
-                        <p class="product-details-item__color">Color: <span>Red</span></p>
-                        <p class="product-details-item__size">Size: <span>Xll</span></p>
+            <div class="content__rigth">
+                <form class="content__filter-form" method="GET">
+                    <div class="content__trending-now">
+                        <h3 class="content__label">Trending now</h3>
+                        <a href="#" class="content__link">Bohemian</a>
+                        <a href="#" class="content__link">Floral</a>
+                        <a href="#" class="content__link">Lace</a>
+                        <a href="#" class="content__link">Floral</a>
+                        <a href="#" class="content__link">Lace</a>
+                        <a href="#" class="content__link">Bohemian</a>
                     </div>
-                </div>
-                <div class="product-details-item__right">
-                    <p class="product-details-item__price">${{product.price}}</p>
-                    <input class="product-details-item__quantity" type="number" name="quantity">
-                    <p class="product-details-item__shipping">FREE</p>
-                    <p class="product-details-item__subtotal">$300</p>
-                    <a href="#"><i class="fas fa-times-circle"></i></a>
-
-                </div>
-            </div>
-            <div class="line"></div>
-            <!-- <div class="product-details__item product-details-item">
-                <div class="product-details-item__left">
-                    <img class="product-details-item__image" src="image/shopping-cart/product_details1.png" alt="man1">
-                    <div class="product-details-item__content">
-                        <h4 class="product-details-item__name">Рубашка</h4>
-                        <p class="product-details-item__color">Color: <span>Red</span></p>
-                        <p class="product-details-item__size">Size: <span>Xll</span></p>
+                    <div class="content__size">
+                        <h3 class="content__label">Size</h3>
+                        <input class="content__size-item" type="checkbox" id="xxs">
+                        <label class="content__size-label" for="xxs">xxs</label>
+                        <input class="content__size-item" type="checkbox" id="xs">
+                        <label class="content__size-label" for="xs">xs</label>
+                        <input class="content__size-item" type="checkbox" id="s">
+                        <label class="content__size-label" for="s">s</label>
+                        <input class="content__size-item" type="checkbox" id="m">
+                        <label class="content__size-label" for="m">m</label>
+                        <input class="content__size-item" type="checkbox" id="l">
+                        <label class="content__size-label" for="l">l</label>
+                        <input class="content__size-item" type="checkbox" id="xl">
+                        <label class="content__size-label" for="xl">xl</label>
+                        <input class="content__size-item" type="checkbox" id="xxl">
+                        <label class="content__size-label" for="xxl">xxl</label>
                     </div>
-                </div>
-                <div class="product-details-item__right">
-                    <p class="product-details-item__price">$150</p>
-                    <input class="product-details-item__quantity" type="number" name="quantity">
-                    <p class="product-details-item__shipping">FREE</p>
-                    <p class="product-details-item__subtotal">$300</p>
-                    <a href="#"><i class="fas fa-times-circle"></i></a>
+                    <div class="content__price">
+                        <h3 class="content__label">Price</h3>
+                        <input class="content__range" type="range" min="10" max="1500" step="5" value="50">
+                        <div class="content__range-price">
+                            <span class="content__minAndMax-price">$52</span>
+                            <span class="content__minAndMax-price">$400</span>
+                        </div>
 
-                </div>
-            </div> -->
-            <!-- <div class="line"></div>
-            <div class="product-details__item product-details-item">
-                <div class="product-details-item__left">
-                    <img class="product-details-item__image" src="image/shopping-cart/product_details2.png" alt="man1">
-                    <div class="product-details-item__content">
-                        <h4 class="product-details-item__name">Футболка</h4>
-                        <p class="product-details-item__color">Color: <span>Red</span></p>
-                        <p class="product-details-item__size">Size: <span>Xll</span></p>
                     </div>
-                </div>
-                <div class="product-details-item__right">
-                    <p class="product-details-item__price">$150</p>
-                    <input class="product-details-item__quantity" type="number" name="quantity">
-                    <p class="product-details-item__shipping">FREE</p>
-                    <p class="product-details-item__subtotal">$300</p>
-                    <a href="#"><i class="fas fa-times-circle"></i></a>
+                    <div class="content__filter">
+                        <div class="content__sort">
+                            <span class="content__filter-left">Sort By</span>
+                            <select class="content__filter-right" name="sort">
+                                <option value="name">Name</option>
+                                <option value="price">Price</option>
+                                <option value="size">Size</option>
+                            </select>
 
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="product-details__item product-details-item">
-                <div class="product-details-item__left">
-                    <img class="product-details-item__image" src="image/shopping-cart/product_details3.png" alt="man1">
-                    <div class="product-details-item__content">
-                        <h4 class="product-details-item__name">Пальто</h4>
-                        <p class="product-details-item__color">Color: <span>Red</span></p>
-                        <p class="product-details-item__size">Size: <span>Xll</span></p>
+                        </div>
+                        <div class="content__sort">
+                            <span class="content__filter-left">Show</span>
+                            <select class="content__filter-right" name="show">
+                                <option value="09">09</option>
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                            </select></div>
                     </div>
+                </form>
+                <products ref="products" class="content__main">
+                    <!-- <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items1.png" alt="item">
+                        <p class="fetured-item__title">Mango People T-shirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items2.png" alt="item">
+                        <p class="fetured-item__title">Brown People Shirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items3.png" alt="item">
+                        <p class="fetured-item__title">Red T-shirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items4.png" alt="item">
+                        <p class="fetured-item__title">Blue Man Jacket</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items5.png" alt="item">
+                        <p class="fetured-item__title">Skirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items6.png" alt="item">
+                        <p class="fetured-item__title">Blouse man</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items7.png" alt="item">
+                        <p class="fetured-item__title">Mango People T-shirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items8.png" alt="item">
+                        <p class="fetured-item__title">Mango People T-shirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div>
+                    <div class="fetured-item content__fetured-item">
+                        <div class="fetured-item__hidden">
+                            <button class="fetured-item__cart">
+                                <img src="image/index/cart_featured.png" alt="bascket">
+                                <p>Add to Cart</p>
+                            </button>
+                        </div>
+                        <img src="image/product/fetured_items9.png" alt="item">
+                        <p class="fetured-item__title">Mango People T-shirt</p>
+                        <p class="fetured-item__subtitle">$52.00</p>
+                    </div> -->
+                </products>
+                <div class="content__footer">
+                    <div class="content__pagination">
+                        <i class="fas fa-angle-left"></i>
+                        <a href="#" class="content__pagination-link">1</a>
+                        <a href="#" class="content__pagination-link">2</a>
+                        <a href="#" class="content__pagination-link">3</a>
+                        <a href="#" class="content__pagination-link">4</a>
+                        <a href="#" class="content__pagination-link">5</a>
+                        <a href="#" class="content__pagination-link">6</a>
+                        <span>...</span>
+                        <a href="#" class="content__pagination-link">20</a>
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                    <button class="content__button">View All</button>
                 </div>
-                <div class="product-details-item__right">
-                    <p class="product-details-item__price">$150</p>
-                    <input class="product-details-item__quantity" type="number" name="quantity">
-                    <p class="product-details-item__shipping">FREE</p>
-                    <p class="product-details-item__subtotal">$300</p>
-                    <a href="#"><i class="fas fa-times-circle"></i></a>
-
-                </div>
-            </div> -->
-            <div class="line"></div>
-            <div class="product-details__buttons">
-                <button class="product-details__button">cLEAR SHOPPING CART</button>
-                <button class="product-details__button">cONTINUE sHOPPING</button>
             </div>
         </div>
 
+        <div class="quality">
 
-        <div class="shipping-form container">
-            <form class="shipping-form__shipping-adress" method="GET">
-                <h3 class="shipping-form__label">Shipping Adress</h3>
-                <select class="shipping-form__country" name="country">
-                    <option value="bangladesh">Bangladesh</option>
-                    <option value="russia">Russia</option>
-                    <option value="england">England</option>
-                </select>
-                <input class="shipping-form__state" type="text" placeholder="State">
-                <input class="shipping-form__zip" type="text" placeholder="Postcode / Zip">
-                <button class="shipping-form__button">get a quote</button>
-            </form>
-            <form class="shipping-form__coupon-discount" method="GET">
-                <h3 class="shipping-form__label">coupon discount</h3>
-                <p class="shipping-form__sublabel"> Enter your coupon code if you have one
-                </p>
-                <input class="shipping-form__state" type="text" placeholder="State">
-                <button class="shipping-form__button">Apply coupon</button>
-
-            </form>
-            <div class="shipping-form__total">
-                <p class="shipping-form__sub-total">Sub total <span>$900</span></p>
-                <p class="shipping-form__main-total">GRAND TOTAL <span>$900</span></p>
-                <div class="shipping-form__line"></div>
-                <button class="shipping-form__total-button">proceed to checkout</button>
+            <div class="container">
+                <div class="quality__flex">
+                    <div class="quality__item">
+                        <img src="image/product/offer_delivery.png" alt="delivery" class="quality__image">
+                        <h3 class="quality__label">Free Delivery</h3>
+                        <p class="quality__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with
+                            extensive models.</p>
+                    </div>
+                    <div class="quality__item">
+                        <img src="image/product/offer_sales.png" alt="sales" class="quality__image">
+                        <h3 class="quality__label">Sales & discounts</h3>
+                        <p class="quality__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with
+                            extensive models.</p>
+                    </div>
+                    <div class="quality__item">
+                        <img src="image/product/offer_quality.png" alt="quality" class="quality__image">
+                        <h3 class="quality__label">Sales & discounts</h3>
+                        <p class="quality__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with
+                            extensive models.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -547,7 +747,13 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script/CartComp.js"></script>
+    <script src="script/ProductComp.js"></script>
+    <script src="script/FilterComp.js"></script>
     <script src="script/vue.js"></script>
+    <!-- <script src="script/find.js"></script> -->
+    <!-- <script src="script/bascket.js"></script> -->
+    <!-- <script src="script/buscket.js"></script> -->
 </body>
 
 </html>
