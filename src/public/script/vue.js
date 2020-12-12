@@ -1,12 +1,16 @@
-'use strict';
 
-const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
-const myAPI = 'https://raw.githubusercontent.com/Den107/InternetShop-Brend/lesson6/responses';
 
-const app = new Vue({
+import cart from './CartComp'
+import products from './ProductComp'
+import search from './FilterComp'
+
+
+const app = {
     el: '#app',
-    data: {
-        searchLine: '',
+    components: {
+        cart,
+        products,
+        search,
     },
     methods: {
         getJson(url) {
@@ -53,4 +57,6 @@ const app = new Vue({
         },
     },
 
-});
+};
+
+export default app;
